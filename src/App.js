@@ -12,6 +12,8 @@
   import Navigation from "./Navigation"
   import LogOut from "./Logout" 
   import AddReview from "./AddReview"
+  import DeleteRestaurant from "./DeleteRestaurant"
+  import CreateRestaurant from "./CreateRestaurant"
 
   function App() {
     const [client, setClient] = useState(null)
@@ -41,7 +43,9 @@
                   <Route path="/signup" element={renderComponent(Authentication, {type: 'create'})} />
                   <Route path="/signin" element={renderComponent(Authentication)} />
                   <Route path="/logout" element={renderComponent(LogOut)} />
+                  <Route path="/create" element={renderComponent(CreateRestaurant)} />
                   <Route path="/review/:id" element={renderComponent(AddReview)} />
+                  <Route path="/delete/:id" element={renderComponent(DeleteRestaurant)} />
                   <Route path="/" element={renderComponent(Home)} />
                 </Routes>
             </Container>

@@ -15,8 +15,9 @@ function RestaurantCard ({restaurant, user}) {
     return (
         <Card classname="m-3">
             <CardBody>
-                <Card.Title>{restaurant.name}<Card.Text>{avg}</Card.Text></Card.Title>
+                {!isAnon(user) && <Card.Title>{restaurant.name}<Card.Text>{avg}</Card.Text></Card.Title>}
                 {!isAnon(user) && <Link to={`/review/${restaurant._id}`} className="card-link">Add Review</Link>}
+                {!isAnon(user) && <Link to={`/delete/${restaurant._id}`} className="card-link">Delete Restaurant</Link>}
             </CardBody>
         </Card>
     )
