@@ -43,6 +43,7 @@ function Authentication ({mongoContext: {app, user, setUser}, type = 'login'}) {
         const credentials = Realm.Credentials.emailPassword(values.email, values.password);
         setUser(await app.logIn(credentials))
         setLoading(false)
+        window.location.reload(false);
     }
 
     return (

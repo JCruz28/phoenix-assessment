@@ -18,9 +18,11 @@ function CreateRestaurant({mongoContext: {client, app, user}}) {
             address: null,
             borough: "N/A",
             cuisine: "N/A",
-            grades: null,
+            grades: [{date: new Date(),
+                grade: "A",
+                score: 10}],
             name: '',
-            restaurant_id: "N/A"
+            restaurant_id: "12345678"
         },
         validationSchema: reviewSchema,
         onSubmit: values => {

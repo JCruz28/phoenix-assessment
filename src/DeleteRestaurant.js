@@ -31,6 +31,7 @@ function DeleteRestaurant({mongoContext: {client, app, user}}) {
                     <h1>Are you sure you would like to delete?</h1>
                     <div className="text-center mt-2">
                         <button type='submit' onClick={submitHandler}>Yes</button>
+                        <button type='submit' onClick={() => navigate("/")}>No</button>
                     </div>
                 </div>)}
         </div>

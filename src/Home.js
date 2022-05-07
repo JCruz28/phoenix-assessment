@@ -11,7 +11,7 @@ function Home ({mongoContext: {client, user}}) {
   useEffect(() => {
     async function getData () {
       const rests = client.db('sample_restaurants').collection('restaurants')
-      setRestaurants((await rests.find()).slice(0, 20))
+      setRestaurants((await rests.find()).slice(-20).reverse())
       setLoading(false)
     }
 
